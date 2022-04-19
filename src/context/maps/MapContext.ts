@@ -1,10 +1,13 @@
 import { createContext } from "react";
-import { Map } from 'mapbox-gl';
+//@ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import { Map } from '!mapbox-gl';
 
 export interface MapContextProps {
-    isMapReady: boolean;
+    isMapReady: boolean,
     map?: Map,
-    setMap: (map: Map) => void;
+    setMap: (map: Map) => void,
+    getRouteBetweenPoints: (start: [number, number], end: [number, number]) => Promise<void>
 
 }
 

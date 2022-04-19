@@ -33,7 +33,10 @@ export const PlacesProvider = ({ children }: Props) => {
   }, []);
 
   const searchPlacesByTerm = async (query: string) => {
-    if (query.length === 0) return [];
+    if (query.length === 0) {
+      dispatch({type: 'SET_PLACES',payload: []});
+      return []
+    };
     if (!state.userLocation) throw new Error('User location is not defined');
     dispatch({type: 'SET_LOADING_PLACES'});
     const resp = await searchApi.get<PlacesResponse>(`/${query}.json`, {

@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MapsApp } from './MapsApp';
 
-
-import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+//@ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import mapboxgl from '!mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 mapboxgl.accessToken =
-  'pk.eyJ1IjoicGJsZ2xsZ3MiLCJhIjoiY2t2ODdtYnljMDF5czJ3cnM0Z2l3djFpNiJ9.HXM0GxSGKBlqix7MQ8Kv0A';
+  'pk.eyJ1IjoicGJsZ2xsZ3MiLCJhIjoiY2wyNnByYXhnMDE5OTNjcjBmdDBpYXBiYyJ9.CT6UxV3wXZjQJz6zIFIn8Q';
 
 if(!navigator.geolocation){
   alert('Tuu navegador no tiene opcion de Geolocalizacion');
